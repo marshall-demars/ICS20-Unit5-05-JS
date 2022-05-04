@@ -18,17 +18,17 @@ if (navigator.serviceWorker) {
  */
 function myButtonClicked() {
   // input
-  var lengthOne = document.getElementById("length-one").checked
-  var lengthTwo = document.getElementById("length-two").checked
-  var lengthThree = document.getElementById("length-three").checked
+  var lengthOne = document.getElementById("length-one").value
+  var lengthTwo = document.getElementById("length-two").value
+  var lengthThree = document.getElementById("length-three").value
 
   
   // process and output
-  if (lengthOne == lengthTwo == lengthThree) {
+  if ((lengthOne == lengthTwo) && (lengthTwo == lengthThree)) {
     document.getElementById("triangle").innerHTML = 'Your triangle is an equilateral triangle!'
-  } else if (lengthOne == lengthTwo || lengthOne == lengthThree || lengthThree == lengthTwo) {
-    document.getElementById("triangle").innerHTML = 'Your triangle is an isosceles triangle!'
-  } else {
+  } else if ((lengthOne != lengthTwo) && (lengthTwo != lengthThree)) {
     document.getElementById("triangle").innerHTML = 'Your triangle is a scalene triangle!'
+  } else {
+    document.getElementById("triangle").innerHTML = 'Your triangle is an isosceles triangle!'
   }
 }
