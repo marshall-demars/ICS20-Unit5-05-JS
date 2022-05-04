@@ -14,8 +14,21 @@ if (navigator.serviceWorker) {
 }
 
 /**
- * This function displays an alert.
+ * This function calculates if you get free admission
  */
 function myButtonClicked() {
-  document.getElementById("hello-world").innerHTML = "<p>Hello, World!</p>"
+  // input
+  var lengthOne = document.getElementById("length-one").checked
+  var lengthTwo = document.getElementById("length-two").checked
+  var lengthThree = document.getElementById("length-three").checked
+
+  
+  // process and output
+  if (lengthOne == lengthTwo == lengthThree) {
+    document.getElementById("triangle").innerHTML = 'Your triangle is an equilateral triangle!'
+  } else if (lengthOne == lengthTwo || lengthOne == lengthThree || lengthThree == lengthTwo) {
+    document.getElementById("triangle").innerHTML = 'Your triangle is an isosceles triangle!'
+  } else {
+    document.getElementById("triangle").innerHTML = 'Your triangle is a scalene triangle!'
+  }
 }
