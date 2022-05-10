@@ -24,11 +24,16 @@ function myButtonClicked() {
 
   
   // process and output
-  if ((lengthOne == lengthTwo) && (lengthTwo == lengthThree)) {
-    document.getElementById("triangle").innerHTML = 'Your triangle is an equilateral triangle!'
-  } else if ((lengthOne != lengthTwo) && (lengthTwo != lengthThree)) {
-    document.getElementById("triangle").innerHTML = 'Your triangle is a scalene triangle!'
+  if ((lengthOne <= 0) || (lengthTwo <= 0) || (lengthThree <= 0)) {
+    document.getElementById("triangle").innerHTML = 'Please input a positive number.'
   } else {
-    document.getElementById("triangle").innerHTML = 'Your triangle is an isosceles triangle!'
+    if ((lengthOne == lengthTwo) && (lengthTwo == lengthThree)) {
+      document.getElementById("triangle").innerHTML = 'Your triangle is an equilateral triangle!'
+    } else if ((lengthOne != lengthTwo) && (lengthTwo != lengthThree)) {
+      document.getElementById("triangle").innerHTML = 'Your triangle is a scalene triangle!'
+    } else {
+      document.getElementById("triangle").innerHTML = 'Your triangle is an isosceles triangle!'
+    }
   }
 }
+  
